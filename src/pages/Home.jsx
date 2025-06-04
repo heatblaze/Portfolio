@@ -2,7 +2,7 @@ import {Suspense} from 'react'
 import { useState } from 'react';
 import { Canvas, useThree } from '@react-three/fiber'
 import { useRef, useEffect } from 'react';
-import Loader from '../Components/Loader'
+import Loader from '../components/Loader'
 import Island from '../models/Island';
 
 import { OrbitControls } from '@react-three/drei';
