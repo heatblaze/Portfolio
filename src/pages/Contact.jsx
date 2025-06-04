@@ -33,7 +33,7 @@ const Contact = () => {
         to_name: "Aditya",
         from_email: form.email,
         to_email: 'adityachitransh18@gmail.com',
-        message: form.change   
+        message: form.message   
       },
       import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       ).then(() => {
