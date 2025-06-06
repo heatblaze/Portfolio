@@ -72,7 +72,7 @@ const Projects = () => {
               rel="noopener noreferrer"
               className="font-semibold text-blue-600 flex items-center gap-2 hover:underline"
             >
-              Live Link
+              View Github Repo
               <img src={arrow} alt="arrow" className="w-4 h-4 object-contain" />
             </Link>
           </motion.div>
