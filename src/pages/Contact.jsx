@@ -61,14 +61,15 @@ const Contact = () => {
         {/* Left: Form and heading */}
         <div className="w-full lg:w-1/2">
           <h1 className="text-4xl font-bold font-sans mb-8">Get in Touch</h1>
-          <form className="w-full max-w-xl flex flex-col gap-7" onSubmit={handleSubmit}>
+          <form className="w-full max-w-xl flex flex-col gap-7" onSubmit={handleSubmit} autoComplete="off">
             <label className="text-black-500 font-semibold">
               Name
               <input
                 type="text"
                 name="name"
+                autoComplete="off"
                 className="w-full rounded-lg bg-gray-100 border-none py-3 px-4 mt-2 text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-                placeholder="John"
+                placeholder="e.g.John"
                 required
                 value={form.name}
                 onChange={handleChange}
@@ -81,8 +82,9 @@ const Contact = () => {
               <input
                 type="email"
                 name="email"
+                autoComplete="off"
                 className="w-full rounded-lg bg-gray-100 border-none py-3 px-4 mt-2 text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-                placeholder="John@gmail.com"
+                placeholder="e.g.John@gmail.com"
                 required
                 value={form.email}
                 onChange={handleChange}
@@ -94,6 +96,7 @@ const Contact = () => {
               Your Message
               <textarea
                 name="message"
+                autoComplete="off"
                 rows={4}
                 className="w-full rounded-lg bg-gray-100 border-none py-3 px-4 mt-2 text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
                 placeholder="Let me know how I can help you!"
