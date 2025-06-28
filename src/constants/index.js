@@ -46,7 +46,7 @@ import code from '../assets/images/code.png';
 import levelup from '../assets/images/levelup.png';
 import encrypt from '../assets/images/encrypt.png';
 import malware from '../assets/images/malware.png';
-import ibm from '../assests/icons/ibm.jpg';
+import ibm from '../assets/icons/ibm.jpg';
 
 export const skills = [
     {
