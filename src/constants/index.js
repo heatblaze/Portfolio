@@ -46,6 +46,7 @@ import code from '../assets/images/code.png';
 import levelup from '../assets/images/levelup.png';
 import encrypt from '../assets/images/encrypt.png';
 import malware from '../assets/images/malware.png';
+import ibm from '../assests/icons/ibm.jpg';
 
 export const skills = [
     {
@@ -208,6 +209,18 @@ export const experiences = [
             "Represented MAHE Bengaluru at UTSAV'25, the Inter-MAHE Cultural Fest, coordinating participation across multiple cultural domains.",
             "Led a team of student performers and volunteers, ensuring effective delegation, scheduling, and logistics management for the event.",
             "Collaborated with faculty and fest coordinators to streamline pre-event preparation, registration, and performance entries.",
+        ],
+    },
+  {
+        title: "AI Intern",
+        company_name: "IBM",
+        icon: ibm,
+        iconBg: "#aae9fe",
+        date: "June 2025 - Present",
+        points: [
+            "Developing AI/ML project under mentorship, focusing on real-world-problem-solving using supervised learning techniques.",
+            "Collaborated remotely with IBM professionals, attending weekly technical sessions and Q&A discussions to refine models and implementation strategy.",
+            "Gained hands-on experience with industry tools and best practices in data preprocessing, model training, and performance evaluation.",
         ],
     },
     
