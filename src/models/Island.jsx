@@ -20,12 +20,23 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
   const lastx = useRef(0);
   const rotationSpeed = useRef(0);
   const dampingFactor = 0.95;
+  const isMobile = window.innerWidth < 768;
 
   const handlePointerDown = (e) => {
     e.stopPropagation();
     e.preventDefault();
     setIsRotating(true);
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    
+    // Better touch handling for mobile devices
+    let clientX;
+    if (e.touches && e.touches.length > 0) {
+      clientX = e.touches[0].clientX;
+    } else if (e.changedTouches && e.changedTouches.length > 0) {
+      clientX = e.changedTouches[0].clientX;
+    } else {
+      clientX = e.clientX;
+    }
+    
     lastx.current = clientX;
   };
 
@@ -39,11 +50,25 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
     e.stopPropagation();
     e.preventDefault();
     if (isRotating) {
-      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      // Better touch handling for mobile devices
+      let clientX;
+      if (e.touches && e.touches.length > 0) {
+        clientX = e.touches[0].clientX;
+      } else if (e.changedTouches && e.changedTouches.length > 0) {
+        clientX = e.changedTouches[0].clientX;
+      } else {
+        clientX = e.clientX;
+      }
+      
       const delta = (clientX - lastx.current) / viewport.width;
-      islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+      
+      // Increase sensitivity for mobile devices
+      const sensitivity = isMobile ? 0.025 : 0.01;
+      const rotationDelta = delta * sensitivity * Math.PI;
+      
+      islandRef.current.rotation.y += rotationDelta;
       lastx.current = clientX;
-      rotationSpeed.current = delta * 0.01 * Math.PI;
+      rotationSpeed.current = rotationDelta;
     }
   };
 
@@ -65,6 +90,37 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
     }
   };
 
+  // Touch-specific handlers for better mobile support
+  const handleTouchStart = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setIsRotating(true);
+    if (e.touches && e.touches.length > 0) {
+      lastx.current = e.touches[0].clientX;
+    }
+  };
+
+  const handleTouchMove = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    if (isRotating && e.touches && e.touches.length > 0) {
+      const clientX = e.touches[0].clientX;
+      const delta = (clientX - lastx.current) / viewport.width;
+      
+      // Higher sensitivity for touch devices
+      const rotationDelta = delta * 0.03 * Math.PI;
+      
+      islandRef.current.rotation.y += rotationDelta;
+      lastx.current = clientX;
+      rotationSpeed.current = rotationDelta;
+    }
+  };
+
+  const handleTouchEnd = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setIsRotating(false);
+  };
   useFrame(() => {
     if (!isRotating) {
       rotationSpeed.current *= dampingFactor;
@@ -97,9 +153,18 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
 
   useEffect(() => {
     const canvas = gl.domElement;
+    
+    // Add both pointer and touch events for better compatibility
     canvas.addEventListener("pointerdown", handlePointerDown);
     canvas.addEventListener("pointerup", handlePointerUp);
     canvas.addEventListener("pointermove", handlePointerMove);
+    
+    // Touch events for mobile devices
+    canvas.addEventListener("touchstart", handleTouchStart, { passive: false });
+    canvas.addEventListener("touchmove", handleTouchMove, { passive: false });
+    canvas.addEventListener("touchend", handleTouchEnd, { passive: false });
+    
+    // Keyboard events
     document.addEventListener("keydown", handleKeyDown);
     document.addEventListener("keyup", handleKeyUp);
 
@@ -107,10 +172,13 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
       canvas.removeEventListener("pointerdown", handlePointerDown);
       canvas.removeEventListener("pointerup", handlePointerUp);
       canvas.removeEventListener("pointermove", handlePointerMove);
+      canvas.removeEventListener("touchstart", handleTouchStart);
+      canvas.removeEventListener("touchmove", handleTouchMove);
+      canvas.removeEventListener("touchend", handleTouchEnd);
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
     };
-  }, [gl, handlePointerDown, handlePointerUp, handlePointerMove]);
+  }, [gl, isRotating, viewport.width]);
 
   return (
     // {Island 3D model from: https://sketchfab.com/3d-models/foxs-islands-163b68e09fcc47618450150be7785907}

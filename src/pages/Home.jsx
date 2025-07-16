@@ -71,6 +71,7 @@ const Home = () => {
         <Canvas 
           linear={false}
           className={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`}
+          style={{ touchAction: 'none' }}
           camera={{ near: 0.1, far: 1000 }}        
         >
             <Suspense fallback={<Loader />}>
