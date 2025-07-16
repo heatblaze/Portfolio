@@ -17,18 +17,18 @@ const gradients = [
 
 const Projects = () => {
   return (
-    <section className="max-w-6xl mx-auto px-8 pt-16 bg-gray-50">
-      <h1 className="text-4xl font-bold leading-relaxed">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 pt-12 sm:pt-16 bg-gray-50">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-relaxed">
         My{' '}
         <span className="inline-block bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent drop-shadow font-bold">
           Projects
         </span>
       </h1>
-      <p className="text-gray-500 text-base leading-relaxed mb-8 mt-4">
+      <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 mt-3 sm:mt-4">
         I've embarked on numerous projects throughout the years, but these are the ones I hold closest to my heart. Many of them are open-source, so if you come across something that piques your interest, feel free to explore the codebase and contribute your ideas for further enhancements. Your collaboration is highly valued!
       </p>
       {/* Responsive two-column grid */}
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16">
+      <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-8 sm:gap-x-12 md:gap-x-16 gap-y-8 sm:gap-y-12 md:gap-y-16">
         {projects.map((project, idx) => (
           <motion.div
             key={project.name}
@@ -43,7 +43,7 @@ const Projects = () => {
               whileHover={{ scale: 1.15 }}
               transition={{ type: 'spring', stiffness: 300 }}
               className={`
-                w-14 h-14
+                w-12 h-12 sm:w-14 sm:h-14
                 flex items-center justify-center
                 rounded-2xl
                 shadow-2xl
@@ -60,29 +60,29 @@ const Projects = () => {
               <img
                 src={project.iconUrl}
                 alt="Project Icon"
-                className="w-8 h-8 object-contain"
+                className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
               />
             </motion.div>
             {/* Text below the card, left-aligned */}
-            <h4 className="text-xl font-semibold mb-1 font-poppins">{project.name}</h4>
-            <p className="text-gray-600 text-base mb-4">{project.description}</p>
+            <h4 className="text-lg sm:text-xl font-semibold mb-1 font-poppins">{project.name}</h4>
+            <p className="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">{project.description}</p>
             <Link
               to={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-blue-600 flex items-center gap-2 hover:underline"
+              className="font-semibold text-blue-600 flex items-center gap-2 hover:underline text-sm sm:text-base"
             >
               View Github Repo
-              <img src={arrow} alt="arrow" className="w-4 h-4 object-contain" />
+              <img src={arrow} alt="arrow" className="w-3 h-3 sm:w-4 sm:h-4 object-contain" />
             </Link>
           </motion.div>
         ))}
       </div>
 
-      <hr className="border-slate-200 my-16"/>
+      <hr className="border-slate-200 my-8 sm:my-12 md:my-16"/>
 
       <CTA />
-      <div className="mt-4">
+      <div className="mt-3 sm:mt-4">
       <SocialLinks className="justify-center" />
       </div>
     </section>

@@ -55,20 +55,20 @@ const Contact = () => {
   };
 
   return (
-    <section className="pt-24 min-h-screen bg-gradient-to-b from-gray-50 to-gray-200">
+    <section className="pt-16 sm:pt-20 md:pt-24 min-h-screen bg-gradient-to-b from-gray-50 to-gray-200">
       {alert.show && <Alert {...alert}/>}
-      <div className="max-w-5xl mx-auto px-8 flex flex-col lg:flex-row items-center justify-between gap-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 md:gap-10">
         {/* Left: Form and heading */}
         <div className="w-full lg:w-1/2">
-          <h1 className="text-4xl font-bold font-sans mb-8">Get in Touch</h1>
-          <form className="w-full max-w-xl flex flex-col gap-7" onSubmit={handleSubmit} autoComplete="off">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-sans mb-6 sm:mb-8">Get in Touch</h1>
+          <form className="w-full max-w-xl flex flex-col gap-5 sm:gap-6 md:gap-7" onSubmit={handleSubmit} autoComplete="off">
             <label className="text-black-500 font-semibold">
               Name
               <input
                 type="text"
                 name="name"
                 autoComplete="off"
-                className="w-full rounded-lg bg-gray-100 border-none py-3 px-4 mt-2 text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full rounded-lg bg-gray-100 border-none py-2 sm:py-3 px-3 sm:px-4 mt-2 text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base"
                 placeholder="e.g.John"
                 required
                 value={form.name}
@@ -83,7 +83,7 @@ const Contact = () => {
                 type="email"
                 name="email"
                 autoComplete="off"
-                className="w-full rounded-lg bg-gray-100 border-none py-3 px-4 mt-2 text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full rounded-lg bg-gray-100 border-none py-2 sm:py-3 px-3 sm:px-4 mt-2 text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base"
                 placeholder="e.g.John@gmail.com"
                 required
                 value={form.email}
@@ -97,8 +97,8 @@ const Contact = () => {
               <textarea
                 name="message"
                 autoComplete="off"
-                rows={4}
-                className="w-full rounded-lg bg-gray-100 border-none py-3 px-4 mt-2 text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                rows={3}
+                className="w-full rounded-lg bg-gray-100 border-none py-2 sm:py-3 px-3 sm:px-4 mt-2 text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base"
                 placeholder="Let me know how I can help you!"
                 required
                 value={form.message}
@@ -109,7 +109,7 @@ const Contact = () => {
             </label>
             <button
               type="submit"
-              className="w-full py-3 mt-4 bg-gradient-to-r from-blue-500 to-blue-400 text-white font-semibold rounded-lg shadow-md transition hover:from-blue-600 hover:to-blue-500 flex items-center justify-center"
+              className="w-full py-2 sm:py-3 mt-3 sm:mt-4 bg-gradient-to-r from-blue-500 to-blue-400 text-white font-semibold rounded-lg shadow-md transition hover:from-blue-600 hover:to-blue-500 flex items-center justify-center text-sm sm:text-base"
               disabled={isLoading}
             >
               {isLoading ? (
@@ -123,7 +123,7 @@ const Contact = () => {
           </form>
         </div>
         {/* Right: Fox Model */}
-        <div className="w-full lg:w-1/2 flex justify-center items-center h-[400px]">
+        <div className="w-full lg:w-1/2 flex justify-center items-center h-[250px] sm:h-[300px] md:h-[400px]">
           <Canvas
             camera={{
               position: [0, 0, 5],
@@ -137,16 +137,16 @@ const Contact = () => {
             <Suspense fallback={<Loader />}>
               <Fox 
                 currentAnimation={currentAnimation}
-                position={[0.5, 0.35, 0]}
+                position={[0.5, 0.2, 0]}
                 rotation={[12.6, -0.7, 0]}
-                scale={[0.7, 0.7, 0.7]}
+                scale={[0.5, 0.5, 0.5]}
               />
             </Suspense>
           </Canvas>
         </div>
       </div>
       <SocialLinks className="justify-center" />
-      <div className="mt-2 text-center font-poppins">
+      <div className="mt-2 text-center font-poppins text-xs sm:text-sm px-4">
       📧 adityachitransh18@gmail <br/>
       Copyright © 2025 Aditya Chitransh. All rights reserved.
       </div>
