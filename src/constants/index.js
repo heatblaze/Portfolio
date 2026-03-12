@@ -47,8 +47,8 @@ import levelup from '../assets/images/levelup.png';
 import encrypt from '../assets/images/encrypt.png';
 import malware from '../assets/images/malware.png';
 import ibm from '../assets/icons/ibm.jpg'
-import vaishnav from '..assets/images/vaishnav.png'
-import beatroute from '..assets/images/beatroute.png'
+import vaishnav from '../assets/images/vaishnav.png'
+import beatroute from '../assets/images/beatroute.png'
 
 export const skills = [
     {
