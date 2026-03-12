@@ -1,29 +1,29 @@
 import { meta, shopify, starbucks, tesla } from "../assets/images";
 import {
-  car,
-  contact,
-  css,
-  estate,
-  express,
-  git,
-  github,
-  html,
-  javascript,
-  linkedin,
-  mongodb,
-  motion,
-  mui,
-  nextjs,
-  nodejs,
-  pricewise,
-  react,
-  redux,
-  sass,
-  snapgram,
-  summiz,
-  tailwindcss,
-  threads,
-  typescript
+    car,
+    contact,
+    css,
+    estate,
+    express,
+    git,
+    github,
+    html,
+    javascript,
+    linkedin,
+    mongodb,
+    motion,
+    mui,
+    nextjs,
+    nodejs,
+    pricewise,
+    react,
+    redux,
+    sass,
+    snapgram,
+    summiz,
+    tailwindcss,
+    threads,
+    typescript
 } from "../assets/icons";
 
 import threejs from '../assets/icons/threejs.png'; // ✅ your direct import
@@ -46,7 +46,9 @@ import code from '../assets/images/code.png';
 import levelup from '../assets/images/levelup.png';
 import encrypt from '../assets/images/encrypt.png';
 import malware from '../assets/images/malware.png';
-import ibm from '../assets/icons/ibm.jpg';
+import ibm from '../assets/icons/ibm.jpg'
+import vaishnav from '..assets/images/vaishnav.png'
+import beatroute from '..assets/images/beatroute.png'
 
 export const skills = [
     {
@@ -98,8 +100,8 @@ export const skills = [
         imageUrl: threejs,
         name: "Three.js",
         type: "Frontend",
-      },
-      
+    },
+
     {
         imageUrl: qiskit,
         name: "Qiskit",
@@ -174,6 +176,42 @@ export const skills = [
 
 export const experiences = [
     {
+        title: "AI & ML Intern",
+        company_name: "BeatRoute Pvt. Ltd.",
+        icon: beatroute,
+        iconBg: "#f19906",
+        date: "Sep 2025 - Mar 2026",
+        points: [
+            "Developed and evaluated AI-driven automation modules for enterprise workflows including sales assistance, invoice processing, and tele-order management, improving operational efficiency for internal business processes.",
+            "Implemented customer segmentation models using historical order datasets, analyzing thousands of transaction records to group users by purchasing behavior and support targeted sales strategies.",
+            "Built and tested Python-based APIs and backend services for internal AI tools, enabling automated data processing and reducing manual analysis time by ˜30% during experimentation cycle.",
+        ],
+    },
+    {
+        title: "Frontend Web Developer Intern",
+        company_name: "Vaishnav Technologies",
+        icon: vaishnav,
+        iconBg: "#ffffffff",
+        date: "Jul 2025 - Aug 2025",
+        points: [
+            "Designed and developed responsive business dashboards using React, HTML, CSS, and JavaScript, improving page load time by 20% and enhancing user engagement by 15%.",
+            "Integrated REST APIs for real-time data visualization and analytics, reducing manual reporting time by 30% for stakeholders.",
+            "Created reusable UI components and optimized rendering logic, cutting development time for future modules by 25%.",
+        ],
+    },
+    {
+        title: "Cultural Secretary",
+        company_name: "MAHE Bengaluru",
+        icon: manipal,
+        iconBg: "#ffbe7e",
+        date: "Mar 2025 - Present",
+        points: [
+            "Represented MAHE Bengaluru at UTSAV'25, the Inter-MAHE Cultural Fest, coordinating participation across multiple cultural domains.",
+            "Led a team of student performers and volunteers, ensuring effective delegation, scheduling, and logistics management for the event.",
+            "Collaborated with faculty and fest coordinators to streamline pre-event preparation, registration, and performance entries.",
+        ],
+    },
+    {
         title: "Vice Fest Head",
         company_name: "MIT Bengaluru",
         icon: manipal,
@@ -191,39 +229,14 @@ export const experiences = [
         company_name: "GDSC MIT Bengaluru",
         icon: gdsc,
         iconBg: "#f4f2f2",
-        date: "Mar 2024 - Present",
+        date: "Mar 2024 - Jun 2025",
         points: [
             "Developed and maintained internal tracking spreadsheets for budget allocations, cutting overspending by 15%.",
             "Supported data-driven planning for technical workshops (avg. 60+ attendees), leveraging registration data and past event metrics.",
             "Assisted in organizing and coordinating chapter activities, workshops, and technical events.",
-            "Created financial reports using Excel and Google Sheets with pivot tables and conditional logic.",
+            "Created financial reports using Excel and Google Sheets with pivot tables and conditional logic. Later was promoted to Chapter Lead from Oct 2024",
         ],
     },
-    {
-        title: "Cultural Secretary",
-        company_name: "MAHE Bengaluru",
-        icon: manipal,
-        iconBg: "#ffbe7e",
-        date: "Mar 2025 - Present",
-        points: [
-            "Represented MAHE Bengaluru at UTSAV'25, the Inter-MAHE Cultural Fest, coordinating participation across multiple cultural domains.",
-            "Led a team of student performers and volunteers, ensuring effective delegation, scheduling, and logistics management for the event.",
-            "Collaborated with faculty and fest coordinators to streamline pre-event preparation, registration, and performance entries.",
-        ],
-    },
-  {
-        title: "AI Intern",
-        company_name: "IBM",
-        icon: ibm,
-        iconBg: "#aae9fe",
-        date: "June 2025 - Present",
-        points: [
-            "Developing AI/ML project under mentorship, focusing on real-world-problem-solving using supervised learning techniques.",
-            "Collaborated remotely with IBM professionals, attending weekly technical sessions and Q&A discussions to refine models and implementation strategy.",
-            "Gained hands-on experience with industry tools and best practices in data preprocessing, model training, and performance evaluation.",
-        ],
-    },
-    
 ];
 
 export const socialLinks = [
@@ -246,46 +259,45 @@ export const socialLinks = [
 
 export const projects = [
     {
-      iconUrl: quantum1,
-      theme: 'bg-red-500',
-      name: 'Quantum Risk Predictor',
-      description: 'Created a credit risk prediction app using hybrid models to analyze loan applicant behavior and assess default likelihood.',
-      link: 'https://github.com/heatblaze/Qunatum-ML-for-Financial-Risk-Prediction',
+        iconUrl: quantum1,
+        theme: 'bg-red-500',
+        name: 'Quantum Risk Predictor',
+        description: 'Created a credit risk prediction app using hybrid models to analyze loan applicant behavior and assess default likelihood.',
+        link: 'https://github.com/heatblaze/Qunatum-ML-for-Financial-Risk-Prediction',
     },
     {
-      iconUrl: lawyer,
-      theme: 'bg-green-500',
-      name: 'Smart Legal Assistant',
-      description: 'Developed a legal assistant that analyzes uploaded documents, asks intelligent follow-up questions, and provides case insights.',
-      link: 'https://github.com/heatblaze/Smart-Legal-Assistant',
+        iconUrl: lawyer,
+        theme: 'bg-green-500',
+        name: 'Smart Legal Assistant',
+        description: 'Developed a legal assistant that analyzes uploaded documents, asks intelligent follow-up questions, and provides case insights.',
+        link: 'https://github.com/heatblaze/Smart-Legal-Assistant',
     },
     {
-      iconUrl: code,
-      theme: 'bg-blue-500',
-      name: 'Collaborative Code Editor',
-      description: 'Built a real-time code editor enabling multiple users to write and edit code simultaneously with live syncing and collaboration.',
-      link: 'https://github.com/heatblaze/Collabrative-Code-Editor',
+        iconUrl: code,
+        theme: 'bg-blue-500',
+        name: 'Collaborative Code Editor',
+        description: 'Built a real-time code editor enabling multiple users to write and edit code simultaneously with live syncing and collaboration.',
+        link: 'https://github.com/heatblaze/Collabrative-Code-Editor',
     },
     {
-      iconUrl: levelup,
-      theme: 'bg-pink-500',
-      name: 'Solo Leveling Habit Tracker',
-      description: 'Designed a gamified habit tracker with leveling, radar stats, and calendar-based progress visualization inspired by Solo Leveling.',
-      link: 'https://github.com/heatblaze/Habit-Tracker-Solo-Leveling-Themed',
+        iconUrl: levelup,
+        theme: 'bg-pink-500',
+        name: 'Solo Leveling Habit Tracker',
+        description: 'Designed a gamified habit tracker with leveling, radar stats, and calendar-based progress visualization inspired by Solo Leveling.',
+        link: 'https://github.com/heatblaze/Habit-Tracker-Solo-Leveling-Themed',
     },
     {
-      iconUrl: encrypt,
-      theme: 'bg-black',
-      name: ' Secure Voice Communication App',
-      description: 'Developed a secure real-time voice chat app with encryption, live connection indicators, and encrypted audio playback support.',
-      link: 'https://github.com/heatblaze/audio-encryption',
+        iconUrl: encrypt,
+        theme: 'bg-black',
+        name: ' Secure Voice Communication App',
+        description: 'Developed a secure real-time voice chat app with encryption, live connection indicators, and encrypted audio playback support.',
+        link: 'https://github.com/heatblaze/audio-encryption',
     },
     {
-      iconUrl: malware,
-      theme: 'bg-yellow-400',
-      name: 'Memory Forensics for Malware Analysis',
-      description: 'Built a tool to scan memory dumps and detect hidden malware by analyzing patterns and suspicious memory segments.',
-      link: 'https://github.com/heatblaze/Memory-Forensics-for-Malware-Analysis',
+        iconUrl: malware,
+        theme: 'bg-yellow-400',
+        name: 'Memory Forensics for Malware Analysis',
+        description: 'Built a tool to scan memory dumps and detect hidden malware by analyzing patterns and suspicious memory segments.',
+        link: 'https://github.com/heatblaze/Memory-Forensics-for-Malware-Analysis',
     }
-  ];
-  
+];
